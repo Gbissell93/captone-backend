@@ -1,9 +1,21 @@
-var express = require('express');
-var router = express.Router();
+const {
+  validateCreateData,
+} = require("./user/lib/AuthCreateMiddleware/validateCreateData");
+const {
+  loginValidator,
+} = require("./user/lib/authLoginMiddleware/validateLoginData");
+const { isUndefined } = require("./shared/checkIfUndefined");
+const { checkIsEmpty } = require("./shared/checkisEmpty");
+const { jwtMiddleware } = require("./shared/jwt");
+const {
+  validateUpdate,
+} = require("./user/lib/authUpdateMiddleware/validateUpdate");
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
-module.exports = router;
+module.exports = {
+  checkIsEmpty,
+  isUndefined,
+  validateCreateData,
+  jwtMiddleware,
+  validateUpdate,
+  loginValidator,
+};
