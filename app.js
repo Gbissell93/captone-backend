@@ -5,7 +5,8 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 
-const usersRouter = require("./routes/user/users");
+const usersRouter = require("./routes/user/userRouter");
+const coinRouter = require("./routes/list/CoinListRouter");
 
 mongoose
   .connect(process.env.MONGO_DB)
@@ -24,7 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use("/api/users", usersRouter);
-
+app.use("/api/coin", coinRouter);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));

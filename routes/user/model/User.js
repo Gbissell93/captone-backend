@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema(
     password: {
       type: String,
     },
-    watchList: [{ type: mongoose.Schema.ObjectId, ref: "watch list" }],
+    coinList: [{ type: mongoose.Schema.ObjectId, ref: "coinList" }],
   },
   {
     timestamps: true,
