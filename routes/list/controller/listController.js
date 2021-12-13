@@ -1,4 +1,4 @@
-const User = require("../../user/model/User");
+const User = require("../../user/model/user");
 const Coin = require("../model/coin");
 
 async function addCoins(req, res) {
